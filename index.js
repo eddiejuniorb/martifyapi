@@ -28,6 +28,10 @@ app.use("/blog", blogRouter);
 app.use("/auth", authRoute);
 app.use("/profile", profileRoute);
 
+app.get("/", (req, res) => {
+  res.send("Hello Ghaan");
+});
+
 // Not Match
 app.all("*", (req, res) => {
   res.status(404).send(`Requested URL ${req.path} not found`);
